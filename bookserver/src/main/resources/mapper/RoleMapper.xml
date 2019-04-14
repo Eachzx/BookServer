@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.each.bookserver.mapper.RoleMapper">
+
+    <resultMap type="com.each.bookserver.entity.Role" id="role">
+        <id column="id" property="id"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_no" property="roleNo"/>
+        <collection property="permissions" ofType="com.each.bookserver.entity.Permission" select="com.each.bookserver.mapper.PermissionMapper.findPermissionById" column="id">
+        </collection>
+    </resultMap>
+
+    <select id="findRoleById" resultMap="role" >
+        SELECT a.*from role a left JOIN
+        user_role b on a.id= b.role_id LEFT JOIN
+        user c on c.id= b.user_id
+        <if test="_parameter != null">
+            <where>
+                and  c.id=#{id}
+            </where>
+        </if>
+    </select>
+</mapper>

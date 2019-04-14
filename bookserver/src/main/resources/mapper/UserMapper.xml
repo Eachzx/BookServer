@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.each.bookserver.mapper.UserMapper">
+
+    <resultMap type="com.each.bookserver.entity.User" id="user">
+        <id column="id" property="id"/>
+        <result column="password" property="password"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_no" property="userNo"/>
+        <collection property="roles" ofType="com.each.bookserver.entity.Role" select="com.each.bookserver.mapper.RoleMapper.findRoleById" column="id">
+        </collection>
+    </resultMap>
+
+    <select id="findUserByUserName" resultMap="user">
+        select  * from  user
+          <if test="_parameter != null and _parameter != ''">
+              <where>
+                  and user_name=#{username}
+              </where>
+          </if>
+    </select>
+</mapper>

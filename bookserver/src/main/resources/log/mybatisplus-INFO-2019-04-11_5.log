@@ -1,0 +1,10 @@
+15:33:22.822 [main] INFO  com.each.bookserver.BookserverApplicationTests - Starting BookserverApplicationTests on DESKTOP-C05QVL9 with PID 6024 (started by ASUS in E:\resultEcah\后端\bookserver)
+15:33:23.015 [main] INFO  com.each.bookserver.BookserverApplicationTests - No active profile set, falling back to default profiles: default
+15:33:28.515 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+15:33:30.475 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+15:33:30.502 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+15:33:30.547 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+15:33:30.680 [main] INFO  com.each.bookserver.BookserverApplicationTests - Started BookserverApplicationTests in 8.766 seconds (JVM running for 10.507)
+15:33:33.614 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:33:33.910 [main] INFO  com.each.bookserver.BookserverApplicationTests - 子菜单:[ChildMenu(id=1, childMenuName=child_menu_1_1, childMenuNo=1-1, parentMenuId=1), ChildMenu(id=2, childMenuName=child_menu_1_2, childMenuNo=1-2, parentMenuId=1)]
+15:33:33.930 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

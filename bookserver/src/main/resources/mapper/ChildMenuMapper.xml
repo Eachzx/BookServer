@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.each.bookserver.mapper.ChildMenuMapper">
+
+    <resultMap type="com.each.bookserver.entity.ChildMenu" id="childmenu">
+        <id column="id" property="id"/>
+        <result column="child_menu_name" property="childMenuName"/>
+        <result column="child_menu_no" property="childMenuNo"/>
+        <result column="parent_menu_id" property="parentMenuId"></result>
+        <!--<collection property="roles" ofType="com.each.bookserver.entity.ParentMenu" select="com.each.bookserver.mapper.RoleMapper.findRoleById" column="id">-->
+        <!--</collection>-->
+    </resultMap>
+
+    <select id="findListChildMenuById" resultMap="childmenu">
+        SELECT a.* from child_menu a LEFT join
+      parent_menu b on a.parent_menu_id=b.id
+      <if test="_parameter != null">
+          <where>
+              and b.id=#{id}
+          </where>
+      </if>
+    </select>
+
+</mapper>

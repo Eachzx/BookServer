@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.each.bookserver.mapper.PermissionMapper">
+
+
+
+    <resultMap type="com.each.bookserver.entity.Permission" id="permission">
+        <id column="id" property="id"/>
+        <result column="permission_name" property="permissionName"/>
+        <result column="permission_no" property="permissionNo"/>
+        <collection property="parentMenus" ofType="com.each.bookserver.entity.ParentMenu" select="com.each.bookserver.mapper.ParentMenuMapper.findParentMenuById" column="id">
+        </collection>
+    </resultMap>
+
+    <select id="findPermissionById" resultMap="permission" >
+        SELECT d.*from permission d left JOIN
+        role_permission e on d.id= e.permission_id LEFT JOIN
+        role f on f.id= e.role_id
+        <if test="_parameter != null">
+            <where>
+                and  f.id=#{id}
+            </where>
+        </if>
+    </select>
+</mapper>
