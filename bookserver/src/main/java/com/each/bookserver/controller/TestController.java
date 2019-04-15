@@ -13,8 +13,7 @@ import javax.annotation.security.RolesAllowed;
 public class TestController {
 
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-
+    @PreAuthorize("hasAuthority('管理员')")
     @RequestMapping(value = "/addData")
     public String addData(){
      return "/addData方法"   ;

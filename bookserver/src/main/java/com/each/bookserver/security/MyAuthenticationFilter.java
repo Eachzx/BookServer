@@ -1,5 +1,6 @@
 package com.each.bookserver.security;
 
+import com.each.bookserver.entity.MyUserDetails;
 import com.each.bookserver.exception.IllegalTokenAuthenticationException;
 import com.each.bookserver.exception.NoneTokenException;
 import com.each.bookserver.exception.TokenIsExpiredException;
@@ -11,6 +12,7 @@ import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -101,8 +104,17 @@ public class MyAuthenticationFilter   extends BasicAuthenticationFilter {
             log.warn("当前token信息已过期,请重新登录");
             throw new TokenIsExpiredException(AuthErrorEnum.TOKEN_EXPIRED.getMessage());
         }
+
+
+
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
+
+            Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+//            System.out.println("用户权限========"+authorities);
+
+
+
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             log.info("用户：{}，正在访问：{}", userName, request.getRequestURI());

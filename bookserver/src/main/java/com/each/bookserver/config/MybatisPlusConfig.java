@@ -71,5 +71,10 @@ public class MybatisPlusConfig {
 //        return new DataSourceTransactionManager(dataSource());
 //    }
 
+    @Bean
+    public MyMetaObjectHandler myMetaObjectHandler(){
+        return new MyMetaObjectHandler();
+    }
+
 }
 

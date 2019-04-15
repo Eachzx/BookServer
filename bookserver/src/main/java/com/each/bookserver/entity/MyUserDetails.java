@@ -51,6 +51,16 @@ public class MyUserDetails extends User implements UserDetails{
                 authorities.add(new SimpleGrantedAuthority(permission.getPermissionName()));
             }
         }
+
+        if (roles == null || roles.size() == 0){
+
+        }else {
+            for (Role role:roles){
+                //这里使用的是权限名称，也可以使用权限id或者编号。区别在于在使用@PreAuthorize("hasAuthority('权限名称')")
+                authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+            }
+        }
+
         return authorities;
     }
 

@@ -103,23 +103,24 @@ public class MyLoginFilter extends UsernamePasswordAuthenticationFilter {
         //使用JTW生成token
         String token = JwtUtil.setClaim(userDetails.getUsername(),true,60*60*1000);
         //根据当前用户的权限可以获取当前用户可以查看的父菜单以及子菜单。(这里在UserDetailsService中由于级联查询，该用户下的所有信息已经查出)
-        Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
-        List<ParentMenu> parentMenus=new ArrayList<>();
-        for (GrantedAuthority authorty: authorities) {
-            String permissionName =authorty.getAuthority();
-
-            Permission permission = permissionService.getOne(new LambdaQueryWrapper<Permission>().eq(Permission::getPermissionName,permissionName ));
-            List<ParentMenu> parentMenuList = permission.getParentMenus();
-            for (ParentMenu parentMenu : parentMenuList) {
-                if(!parentMenus.contains(parentMenu)){
-                    parentMenus.add(parentMenu);
-                }
-            }
-        }
+//        Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+//        List<ParentMenu> parentMenus=new ArrayList<>();
+//        for (GrantedAuthority authorty: authorities) {
+//            String permissionName =authorty.getAuthority();
+//
+//            Permission permission = permissionService.getOne(new LambdaQueryWrapper<Permission>().eq(Permission::getPermissionName,permissionName ));
+//            List<ParentMenu> parentMenuList = permission.getParentMenus();
+//            for (ParentMenu parentMenu : parentMenuList) {
+//                if(!parentMenus.contains(parentMenu)){
+//                    parentMenus.add(parentMenu);
+//                }
+//            }
+//        }
         //返回在response header 中返回token，并且返回用户可以查看的菜单数据
         response.setHeader(tokenHeader,head+token);
         response.setCharacterEncoding("utf-8");
-        response.getWriter().write(ObjectMapperUtil.writeAsString(parentMenus));
+//        response.getWriter().write(ObjectMapperUtil.writeAsString(parentMenus));
+        response.getWriter().write("登陆成功");
 
     }
 }
