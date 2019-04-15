@@ -1,7 +1,0 @@
-15:32:12.854 [main] INFO  com.each.bookserver.BookserverApplicationTests - Starting BookserverApplicationTests on DESKTOP-C05QVL9 with PID 5976 (started by ASUS in E:\resultEcah\后端\bookserver)
-15:32:13.764 [main] INFO  com.each.bookserver.BookserverApplicationTests - No active profile set, falling back to default profiles: default
-15:32:17.833 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-15:32:19.740 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-15:32:19.769 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-15:32:19.811 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-15:32:19.938 [main] INFO  com.each.bookserver.BookserverApplicationTests - Started BookserverApplicationTests in 8.131 seconds (JVM running for 10.061)

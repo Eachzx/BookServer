@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -37,8 +38,8 @@ public class BookserverApplicationTests {
 //        List<Permission> permission=permissionService.findPermissionById(2);
 //        System.out.println(permission);
 //
-        List<ParentMenu> parentMens=parentMenuService.findParentMenuById(1);
-        log.info("cheshi:{}",parentMens);
+//        List<ParentMenu> parentMens=parentMenuService.findParentMenuById(1);
+//        log.info("cheshi:{}",parentMens);
 
 //        ChildMenu childMenu=childMenuService.getOne(new LambdaQueryWrapper<ChildMenu>().eq(ChildMenu::getChildMenuName,"child_menu_1_1" ));
 //
@@ -49,6 +50,20 @@ public class BookserverApplicationTests {
 //        List<ChildMenu> childMenus=childMenuService.findListChildMenuById(1);
 //
 //        log.info("子菜单:{}",childMenus);
+
+
+
+        User user = new User();
+        user.setId(1);
+        user.setUserName("user1");
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        user.setPassword(encoder.encode("123456"));
+        user.setUserNo("NO1");
+
+        boolean ss=userService.updateById(user);
+
+
+
     }
 
 }

@@ -1,0 +1,15 @@
+20:16:29.236 [main] INFO  com.each.bookserver.BookserverApplication - Starting BookserverApplication on DESKTOP-C05QVL9 with PID 7764 (started by ASUS in E:\resultEcah\后端\bookserver)
+20:16:29.333 [main] INFO  com.each.bookserver.BookserverApplication - No active profile set, falling back to default profiles: default
+20:16:31.042 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20:16:31.050 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+20:16:31.051 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+20:16:31.139 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:16:32.432 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+20:16:32.935 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+20:16:32.952 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+20:16:32.980 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+20:16:33.108 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20:16:33.141 [main] INFO  com.each.bookserver.BookserverApplication - Started BookserverApplication in 4.76 seconds (JVM running for 6.57)
+20:16:36.835 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:16:36.933 [http-nio-8080-exec-1] INFO  com.each.bookserver.security.MyLoginFilter - 用户(登录名)：user1 正在进行登录验证。。。密码：123456
+20:16:39.633 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

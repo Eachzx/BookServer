@@ -1,17 +1,19 @@
-17:19:22.376 [main] INFO  com.each.bookserver.BookserverApplication - Starting BookserverApplication on DESKTOP-C05QVL9 with PID 14328 (started by ASUS in E:\resultEcah\后端\bookserver)
-17:19:22.430 [main] INFO  com.each.bookserver.BookserverApplication - No active profile set, falling back to default profiles: default
-17:19:24.129 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-17:19:24.136 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-17:19:24.137 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-17:19:24.230 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-17:19:25.425 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-17:19:25.883 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-17:19:25.900 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-17:19:25.926 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-17:19:26.042 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-17:19:26.067 [main] INFO  com.each.bookserver.BookserverApplication - Started BookserverApplication in 4.491 seconds (JVM running for 6.365)
-17:19:36.797 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-17:19:36.917 [http-nio-8080-exec-1] INFO  com.each.bookserver.security.MyLoginFilter - 用户(登录名)：user1 正在进行登录验证。。。密码：123456
-17:19:39.573 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-17:19:53.753 [http-nio-8080-exec-2] INFO  com.each.bookserver.security.MyAuthenticationFilter - 用户：user1，正在访问：/testApi/addData
-17:19:53.753 [http-nio-8080-exec-2] INFO  com.each.bookserver.security.MyAuthenticationFilter - authenticated user user1, setting security context
+20:21:40.381 [main] INFO  com.each.bookserver.BookserverApplication - Starting BookserverApplication on DESKTOP-C05QVL9 with PID 7196 (started by ASUS in E:\resultEcah\后端\bookserver)
+20:21:40.421 [main] INFO  com.each.bookserver.BookserverApplication - No active profile set, falling back to default profiles: default
+20:21:42.286 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20:21:42.293 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+20:21:42.294 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+20:21:42.383 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:21:43.715 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+20:21:44.197 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+20:21:44.214 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+20:21:44.241 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+20:21:44.361 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20:21:44.386 [main] INFO  com.each.bookserver.BookserverApplication - Started BookserverApplication in 4.923 seconds (JVM running for 6.666)
+20:21:49.154 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:21:49.246 [http-nio-8080-exec-1] INFO  com.each.bookserver.security.MyLoginFilter - 用户(登录名)：user1 正在进行登录验证。。。密码：123456
+20:21:51.908 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+20:21:57.796 [http-nio-8080-exec-2] INFO  com.each.bookserver.security.MyLoginFilter - 用户(登录名)：user1 正在进行登录验证。。。密码：12346
+20:21:58.729 [http-nio-8080-exec-2] WARN  com.each.bookserver.security.MyAuthenticationProvider - 密码错误
+20:21:58.745 [http-nio-8080-exec-2] ERROR com.each.bookserver.exception.MyExceptionHandlerFilter - 密码错误
+20:22:03.321 [http-nio-8080-exec-3] INFO  com.each.bookserver.security.MyLoginFilter - 用户(登录名)：user1 正在进行登录验证。。。密码：123456

@@ -55,7 +55,8 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
             throw new WrongUsernameException(AuthErrorEnum.LOGIN_NAME_ERROR.getMessage());
         }
         //如果从url提交的密码到数据保存的密码没有经过加密或者编码，直接比较是否相同即可。如果在添加用户时的密码是经过加密或者编码的应该使用对应的加密算法和编码工具对密码进行编码之后再进行比较
-        if (!password.equals(userDetails.getPassword())){
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        if (!encoder.matches(password,userDetails.getPassword())){
             log.warn("密码错误");
             throw  new WrongUsernameException(AuthErrorEnum.LOGIN_PASSWORD_ERROR.getMessage());
         }
